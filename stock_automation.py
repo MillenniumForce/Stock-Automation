@@ -23,13 +23,13 @@ def sendAlert(stock):
     """
     @param stock: StockDef class
     """
-    port = 465  # ssl port
+    port = 465 # ssl port
     recieverEmail = "jgarratt01@icloud.com"
-    subject = f"Subject: {stock.company} Alert\n"
+    subject = f"Subject: {stock.company} Alert\n\n"
     message = f"Current price has closed higher than {stock.desiredPrice}"
 
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+    with smtplib.SMTP_SSL("smtp.mail.yahoo.com", port, context=context) as server:
         server.login(EMAIL_USERNAME, EMAIL_PASSWORD)
         server.sendmail(EMAIL_USERNAME, recieverEmail, subject + message)
 
