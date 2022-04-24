@@ -10,9 +10,9 @@ def getClosingPrice(ticker):
     @param ticker: string
     @returns: closing price of given ticker
     """
-    apx = yf.Ticker(ticker)
+    t = yf.Ticker(ticker)
 
-    hist = apx.history(period="1d")
+    hist = t.history(period="1d")
 
     #print(hist.Close[0])
 
