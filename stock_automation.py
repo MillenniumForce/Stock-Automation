@@ -24,7 +24,7 @@ def sendAlert(stock):
     @param stock: StockDef class
     """
     port = 465 # ssl port
-    recieverEmail = "jgarratt01@icloud.com"
+    recieverEmail = "" # enter your email here
     subject = f"Subject: {stock.company} Alert\n\n"
     message = f"Current price has closed higher than {stock.desiredPrice}"
 
